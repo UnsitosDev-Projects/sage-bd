@@ -1,6 +1,6 @@
 
 ## Estructura del Proyecto
-
+```markdown
 sage-bd-docker/
 ├── docker-compose.yml
 ├── postgres/
@@ -9,7 +9,7 @@ sage-bd-docker/
 │ └── 02-query-test.sql
 └── documentation/
 └── README.md
-
+```
 ## Configuración LOCAL (Actual)
 - **Base de Datos**: PostgreSQL 15
 - **Puerto BD**: 5432 (localhost)
