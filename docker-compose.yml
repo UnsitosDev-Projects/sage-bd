@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: sage-bd-unsis
+    environment:
+      POSTGRES_DB: sage
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"  # Compañerito reemplaza aquí con tu propia IP local - "132.18.53.95:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - red-bd-unsis
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: adminer-bd
+    ports:
+      - "8080:8080" #igual aquí - "132.18.53.95:8080:8080"
+    networks:
+      - red-bd-unsis
+    depends_on:
+      - postgres-db
+    restart: unless-stopped
+
+networks:
+  red-bd-unsis:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
