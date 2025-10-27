@@ -25,6 +25,9 @@ docker-compose up -d
 ```
 >[!IMPORTANT]
 >Crea un archivo **.env** que contenga las siguientes variables con tus credenciales
+>
 >POSTGRES_DB: nombre_de_tu_bd
+>
 >POSTGRES_USER: nombre_de_usuario_postgreSQL
+>
 >POSTGRES_PASSWORD: contraseña_de_postgreSQL
