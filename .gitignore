@@ -1,0 +1,5 @@
+# Ignora variables de entorno
+*.env
+# 
+*./vscode
+*./idea
